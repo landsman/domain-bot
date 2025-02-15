@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: "runner"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - LISTEN_PORT=${LISTEN_PORT}
+      - GODADDY_API_KEY=${GODADDY_API_KEY}
+      - GODADDY_API_SECRET=${GODADDY_API_SECRET}
+      - GODADDY_IS_PRODUCTION=${GODADDY_IS_PRODUCTION}
+    ports:
+      - "8088:8088"
